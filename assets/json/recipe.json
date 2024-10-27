@@ -1,0 +1,2671 @@
+[
+    {
+        "id": "1",
+        "name": "Spaghetti Carbonara",
+        "imageUrl": "assets/images/Spaghetti Carbonara.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Eggs",
+            "Dairy"
+        ],
+        "components": [
+            {
+                "name": "Spaghetti",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Durum Wheat",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Eggs",
+                "category": "Proteins",
+                "percentage": 50,
+                "isSubstitutable": true,
+                "substitutes": [
+                    {
+                        "name": "Silken Tofu",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Aquafaba",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Yogurt",
+                        "category": "Proteins",
+                        "percentage": 100
+                    }
+                ]
+            },
+            {
+                "name": "Parmesan Cheese",
+                "category": "Proteins",
+                "percentage": 30,
+                "isSubstitutable": true,
+                "substitutes": [
+                    {
+                        "name": "Pecorino Romano",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Nutritional Yeast",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Grana Padano",
+                        "category": "Proteins",
+                        "percentage": 100
+                    }
+                ]
+            },
+            {
+                "name": "Pancetta",
+                "category": "Proteins",
+                "percentage": 20,
+                "isSubstitutable": true,
+                "substitutes": [
+                    {
+                        "name": "Bacon",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Prosciutto",
+                        "category": "Proteins",
+                        "percentage": 100
+                    },
+                    {
+                        "name": "Smoked Turkey",
+                        "category": "Proteins",
+                        "percentage": 100
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Cook spaghetti in salted boiling water until al dente.",
+                "usedIngredients": [
+                    {
+                        "name": "Durum Wheat",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Fry pancetta until crispy.",
+                "usedIngredients": [
+                    {
+                        "name": "Pancetta",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Whisk eggs and cheese together.",
+                "usedIngredients": [
+                    {
+                        "name": "Eggs",
+                        "quantity": 3,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Parmesan Cheese",
+                        "quantity": 50,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Combine spaghetti with pancetta and then add egg mixture quickly.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "2",
+        "name": "Chicken Tikka Masala",
+        "imageUrl": "assets/images/Chicken Tikka Masala.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Nuts"
+        ],
+        "components": [
+            {
+                "name": "Chicken Marinade",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Chicken Breast",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Tikka Masala Sauces",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Tomato Puree",
+                        "category": "Vegetables",
+                        "percentage": 50,
+                        "isSubstitutable": false
+                    },
+                    {
+                        "name": "Cream",
+                        "category": "Sauces",
+                        "percentage": 50,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Coconut Cream",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Greek Yogurt",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Silken Tofu",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Cashew Cream",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Almond Milk",
+                                "category": "Sauces",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Marinate chicken in spices and yogurt for at least an hour.",
+                "usedIngredients": [
+                    {
+                        "name": "Chicken Breast",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Cook marinated chicken in a skillet until browned.",
+                "usedIngredients": [
+                    {
+                        "name": "Chicken Breast",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Prepare the sauce by simmering tomato puree and cream together.",
+                "usedIngredients": [
+                    {
+                        "name": "Tomato Puree",
+                        "quantity": 200,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Cream",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Combine chicken and sauce, and cook for an additional 10 minutes.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": true
+    },
+    {
+        "id": "3",
+        "name": "Beef Stroganoff",
+        "imageUrl": "assets/images/Beef Stroganoff.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Dairy"
+        ],
+        "components": [
+            {
+                "name": "Beef",
+                "percentage": 70,
+                "ingredients": [
+                    {
+                        "name": "Beef Sirloin",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Mushroom Sauces",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Mushrooms",
+                        "category": "Vegetables",
+                        "percentage": 50,
+                        "isSubstitutable": false
+                    },
+                    {
+                        "name": "Sour Cream",
+                        "category": "Sauces",
+                        "percentage": 50,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Greek Yogurt",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Cottage Cheese",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Cream Cheese",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Buttermilk",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Cashew Cream (with lemon juice)",
+                                "category": "Proteins",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Sauté sliced beef in a pan until browned.",
+                "usedIngredients": [
+                    {
+                        "name": "Beef Sirloin",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add mushrooms and cook until soft.",
+                "usedIngredients": [
+                    {
+                        "name": "Mushrooms",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Stir in sour cream and simmer for a few minutes.",
+                "usedIngredients": [
+                    {
+                        "name": "Sour Cream",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve over egg noodles.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "4",
+        "name": "Tacos al Pastor",
+        "imageUrl": "assets/images/Tacos al Pastor.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Meat"
+        ],
+        "components": [
+            {
+                "name": "Taco Shells",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Corn Flour",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Marinated Pork",
+                "percentage": 70,
+                "ingredients": [
+                    {
+                        "name": "Pork Shoulder",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Marinate pork in spices and pineapple juice overnight.",
+                "usedIngredients": [
+                    {
+                        "name": "Pork Shoulder",
+                        "quantity": 600,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Cook marinated pork until tender and slice.",
+                "usedIngredients": [
+                    {
+                        "name": "Pork Shoulder",
+                        "quantity": 600,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Assemble tacos with pork and toppings.",
+                "usedIngredients": [
+                    {
+                        "name": "Corn Flour",
+                        "quantity": 150,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve with salsa and cilantro.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": true
+    },
+    {
+        "id": "5",
+        "name": "Ratatouille",
+        "imageUrl": "assets/images/Ratatouille.png",
+        "isVegan": true,
+        "allergens": [
+            "None"
+        ],
+        "components": [
+            {
+                "name": "Vegetables",
+                "percentage": 100,
+                "ingredients": [
+                    {
+                        "name": "Zucchini",
+                        "category": "Vegetables",
+                        "percentage": 25,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Cucumber",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Yellow Squash",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Asparagus",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Eggplant",
+                        "category": "Vegetables",
+                        "percentage": 25,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Zucchini",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Bell Peppers",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Mushrooms",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "category": "Vegetables",
+                        "percentage": 25,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Poblano Peppers",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Anaheim Peppers",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Jalapeño Peppers",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Tomatoes",
+                        "category": "Vegetables",
+                        "percentage": 25,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Canned Tomatoes",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Sun-Dried Tomatoes",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Tomato Paste",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Chop all vegetables into small pieces.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 2,
+                "description": "Sauté vegetables in olive oil until soft.",
+                "usedIngredients": [
+                    {
+                        "name": "Zucchini",
+                        "quantity": 100,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Eggplant",
+                        "quantity": 100,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "quantity": 100,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Tomatoes",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Season with salt, pepper, and herbs.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Simmer until all vegetables are tender.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "6",
+        "name": "Paella",
+        "imageUrl": "assets/images/Paella.png",
+        "isVegan": false,
+        "allergens": [
+            "Shellfish",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Rice",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Bomba Rice",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Seafood Mix",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Shrimp",
+                        "category": "Proteins",
+                        "percentage": 50,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Prawns",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Crab",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Lobster",
+                                "category": "Proteins",
+                                "percentage": 100
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mussels",
+                        "category": "Proteins",
+                        "percentage": 50,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Clams",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Oysters",
+                                "category": "Proteins",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Scallops",
+                                "category": "Proteins",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Sauté seafood in a large pan until just cooked.",
+                "usedIngredients": [
+                    {
+                        "name": "Shrimp",
+                        "quantity": 300,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Mussels",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add rice and stir to coat.",
+                "usedIngredients": [
+                    {
+                        "name": "Bomba Rice",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Pour in broth and cook until rice is tender.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Let it rest for a few minutes before serving.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "7",
+        "name": "Moussaka",
+        "imageUrl": "assets/images/Moussaka.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Eggplant",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Eggplant",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Ground Meat",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Ground Beef",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Béchamel Sauces",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Milk",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Slice eggplant and salt to draw out moisture.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 2,
+                "description": "Brown ground beef in a pan.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Beef",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Layer eggplant, meat, and béchamel sauce in a baking dish.",
+                "usedIngredients": [
+                    {
+                        "name": "Eggplant",
+                        "quantity": 300,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Milk",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Bake until golden brown.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "8",
+        "name": "Shepherd's Pie",
+        "imageUrl": "assets/images/Shepherd`s Pie.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Ground Meat",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Ground Lamb",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Mashed Potatoes",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Potatoes",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    },
+                    {
+                        "name": "Butter",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brown ground lamb in a skillet.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Lamb",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Prepare mashed potatoes with butter.",
+                "usedIngredients": [
+                    {
+                        "name": "Potatoes",
+                        "quantity": 800,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Butter",
+                        "quantity": 50,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Layer ground lamb and top with mashed potatoes.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Bake until golden.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "9",
+        "name": "Coq au Vin",
+        "imageUrl": "assets/images/Coq au Vin.png",
+        "isVegan": false,
+        "allergens": [],
+        "components": [
+            {
+                "name": "Chicken",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Chicken Thighs",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Wine Sauces",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Red Wine",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brown chicken thighs in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Chicken Thighs",
+                        "quantity": 600,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add red wine and simmer.",
+                "usedIngredients": [
+                    {
+                        "name": "Red Wine",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add mushrooms and onions and cook until tender.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with crusty bread.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "10",
+        "name": "Goulash",
+        "imageUrl": "assets/images/Goulash.png",
+        "isVegan": false,
+        "allergens": [],
+        "components": [
+            {
+                "name": "Beef",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Chuck Roast",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Vegetables",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Onion",
+                        "category": "Vegetables",
+                        "percentage": 50,
+                        "isSubstitutable": false
+                    },
+                    {
+                        "name": "Bell Pepper",
+                        "category": "Vegetables",
+                        "percentage": 50,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brown chuck roast in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Chuck Roast",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add onions and peppers and cook until softened.",
+                "usedIngredients": [
+                    {
+                        "name": "Onion",
+                        "quantity": 200,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Bell Pepper",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add broth and simmer until thickened.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve with bread or noodles.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "11",
+        "name": "Fish and Chips",
+        "imageUrl": "assets/images/Fish and Chips.png",
+        "isVegan": false,
+        "allergens": [
+            "Fish",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Proteins",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Cod",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Carbohydrates",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Potatoes",
+                        "category": "Carbohydrates",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Cut potatoes into chips and fry until golden.",
+                "usedIngredients": [
+                    {
+                        "name": "Potatoes",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Batter and fry the cod until crispy.",
+                "usedIngredients": [
+                    {
+                        "name": "Cod",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Serve hot with tartar sauce.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "12",
+        "name": "Falafel",
+        "imageUrl": "assets/images/Falafel.png",
+        "isVegan": true,
+        "allergens": [
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Proteins",
+                "percentage": 70,
+                "ingredients": [
+                    {
+                        "name": "Chickpeas",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Spices",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Cumin",
+                        "category": "Spices",
+                        "percentage": 100,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Ground Coriander",
+                                "category": "Spices",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Caraway Seeds",
+                                "category": "Spices",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Curry Powder",
+                                "category": "Spices",
+                                "percentage": 75
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Soak chickpeas overnight and grind.",
+                "usedIngredients": [
+                    {
+                        "name": "Chickpeas",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Mix with spices and form into balls.",
+                "usedIngredients": [
+                    {
+                        "name": "Cumin",
+                        "quantity": 10,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Fry until golden brown.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve with tahini sauce.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "13",
+        "name": "Shakshuka",
+        "imageUrl": "assets/images/Shakshuka.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy"
+        ],
+        "components": [
+            {
+                "name": "Sauces",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Tomatoes",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Proteins",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Eggs",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Sauté onions and peppers in a skillet.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add tomatoes and simmer until thickened.",
+                "usedIngredients": [
+                    {
+                        "name": "Tomatoes",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Crack eggs into the sauce and cover until cooked.",
+                "usedIngredients": [
+                    {
+                        "name": "Eggs",
+                        "quantity": 4,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with bread.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "14",
+        "name": "Chili con Carne",
+        "imageUrl": "assets/images/Chili con Carne.png",
+        "isVegan": false,
+        "allergens": [],
+        "components": [
+            {
+                "name": "Proteins",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Ground Beef",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Beans",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Kidney Beans",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brown ground beef in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Beef",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add kidney beans and chili spices.",
+                "usedIngredients": [
+                    {
+                        "name": "Kidney Beans",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Simmer until flavors meld.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with rice or cornbread.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": true
+    },
+    {
+        "id": "15",
+        "name": "Beef Bourguignon",
+        "imageUrl": "assets/images/Beef Bourguignon.png",
+        "isVegan": false,
+        "allergens": [],
+        "components": [
+            {
+                "name": "Proteins",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Chuck Roast",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Sauces",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Red Wine",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brown the chuck roast in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Chuck Roast",
+                        "quantity": 800,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add red wine and simmer.",
+                "usedIngredients": [
+                    {
+                        "name": "Red Wine",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add mushrooms and onions and cook until tender.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with bread.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "16",
+        "name": "Pad Thai",
+        "imageUrl": "assets/images/Pad Thai.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Nuts"
+        ],
+        "components": [
+            {
+                "name": "Noodles",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Rice Noodles",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Proteins",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Shrimp",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Soak rice noodles in warm water.",
+                "usedIngredients": [
+                    {
+                        "name": "Rice Noodles",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Stir-fry shrimp until cooked.",
+                "usedIngredients": [
+                    {
+                        "name": "Shrimp",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add noodles, sauce, and peanuts.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with lime wedges.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "17",
+        "name": "Souvlaki",
+        "imageUrl": "assets/images/Souvlaki.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Meat",
+                "percentage": 80,
+                "ingredients": [
+                    {
+                        "name": "Pork",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Pita Bread",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Pita",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Marinate pork in spices and skewers.",
+                "usedIngredients": [
+                    {
+                        "name": "Pork",
+                        "quantity": 600,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Grill skewers until cooked through.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 3,
+                "description": "Serve in pita bread with sauce.",
+                "usedIngredients": [
+                    {
+                        "name": "Pita",
+                        "quantity": 4,
+                        "substitute": null
+                    }
+                ]
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "18",
+        "name": "Ceviche",
+        "imageUrl": "assets/images/Ceviche.png",
+        "isVegan": false,
+        "allergens": [
+            "Fish"
+        ],
+        "components": [
+            {
+                "name": "Fish",
+                "percentage": 70,
+                "ingredients": [
+                    {
+                        "name": "White Fish",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Citrus Marinade",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Lime Juice",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Dice the fish and place it in a bowl.",
+                "usedIngredients": [
+                    {
+                        "name": "White Fish",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Pour lime juice over the fish and let it marinate.",
+                "usedIngredients": [
+                    {
+                        "name": "Lime Juice",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add chopped onions and cilantro.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve chilled with tortilla chips.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "19",
+        "name": "Ramen",
+        "imageUrl": "assets/images/Ramen.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Noodles",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Ramen Noodles",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Broth",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Pork Broth",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Toppings",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Soft-Boiled Eggs",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Cook ramen noodles according to package instructions.",
+                "usedIngredients": [
+                    {
+                        "name": "Ramen Noodles",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Heat the pork broth in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Pork Broth",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add noodles to the broth and simmer.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Top with soft-boiled eggs and serve.",
+                "usedIngredients": [
+                    {
+                        "name": "Soft-Boiled Eggs",
+                        "quantity": 2,
+                        "substitute": null
+                    }
+                ]
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "20",
+        "name": "Peking Duck",
+        "imageUrl": "assets/images/Peking Duck.png",
+        "isVegan": false,
+        "allergens": [
+            "Meat"
+        ],
+        "components": [
+            {
+                "name": "Duck",
+                "percentage": 80,
+                "ingredients": [
+                    {
+                        "name": "Whole Duck",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Pancakes",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Chinese Pancakes",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Prepare the duck and let it air dry.",
+                "usedIngredients": [
+                    {
+                        "name": "Whole Duck",
+                        "quantity": 1,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Roast the duck until the skin is crispy.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 3,
+                "description": "Slice the duck and serve with pancakes and sauce.",
+                "usedIngredients": [
+                    {
+                        "name": "Chinese Pancakes",
+                        "quantity": 8,
+                        "substitute": null
+                    }
+                ]
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "21",
+        "name": "Lasagna",
+        "imageUrl": "assets/images/Lasagna.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Pasta",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Lasagna Sheets",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Meat Sauces",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Ground Beef",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Cook the meat sauce with spices.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Beef",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Layer the pasta and sauce in a baking dish.",
+                "usedIngredients": [
+                    {
+                        "name": "Lasagna Sheets",
+                        "quantity": 12,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Bake until golden and bubbly.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Let it rest before serving.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "22",
+        "name": "Croque Monsieur",
+        "imageUrl": "assets/images/Croque Monsieur.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Bread",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "White Bread",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Ham",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Cooked Ham",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Cheese",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Gruyère Cheese",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Preheat the oven to 200°C (392°F).",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 2,
+                "description": "Layer ham and cheese between slices of bread.",
+                "usedIngredients": [
+                    {
+                        "name": "Cooked Ham",
+                        "quantity": 100,
+                        "substitute": null
+                    },
+                    {
+                        "name": "Gruyère Cheese",
+                        "quantity": 50,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Toast in the oven until golden brown.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with a side salad.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "23",
+        "name": "Borscht",
+        "imageUrl": "assets/images/Borscht.png",
+        "isVegan": false,
+        "allergens": [
+            "Meat"
+        ],
+        "components": [
+            {
+                "name": "Beetroot",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Fresh Beetroot",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Broth",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Vegetables Broth",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Chicken Broth",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Beef Broth",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Mushroom Broth",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Water with Seasoning",
+                                "category": "Sauces",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Vegetables",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Cabbage",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Boil the beetroot until tender.",
+                "usedIngredients": [
+                    {
+                        "name": "Fresh Beetroot",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Chop vegetables and sauté in a pot.",
+                "usedIngredients": [
+                    {
+                        "name": "Cabbage",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add boiled beetroot and vegetable broth.",
+                "usedIngredients": [
+                    {
+                        "name": "Vegetables Broth",
+                        "quantity": 1,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Simmer until all vegetables are cooked.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "24",
+        "name": "Empanadas",
+        "imageUrl": "assets/images/Empanadas.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Dough",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Empanada Dough",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Filling",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Ground Beef",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Prepare the dough and let it rest.",
+                "usedIngredients": [
+                    {
+                        "name": "Empanada Dough",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Cook the ground beef with spices.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Beef",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Fill the dough with beef and seal.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Bake until golden brown.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "25",
+        "name": "Jollof Rice",
+        "imageUrl": "assets/images/Jollof Rice.png",
+        "isVegan": true,
+        "allergens": [
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Rice",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Long Grains Rice",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Tomato Sauces",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Tomato Puree",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Spices",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Jollof Spices Mix",
+                        "category": "Spices",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Rinse the rice and set aside.",
+                "usedIngredients": [
+                    {
+                        "name": "Long Grains Rice",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Prepare the tomato sauce by blending tomatoes.",
+                "usedIngredients": [
+                    {
+                        "name": "Tomato Puree",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Cook the rice in the tomato sauce and spices.",
+                "usedIngredients": [
+                    {
+                        "name": "Jollof Spices Mix",
+                        "quantity": 50,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Simmer until the rice is cooked.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "26",
+        "name": "Tom Yum Soup",
+        "imageUrl": "assets/images/Tom Yum Soup.png",
+        "isVegan": false,
+        "allergens": [
+            "Fish"
+         
+        ],
+        "components": [
+            {
+                "name": "Broth",
+                "percentage": 60,
+                "ingredients": [
+                    {
+                        "name": "Chicken Broth",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Proteins",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Shrimp",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Herbs",
+                "percentage": 10,
+                "ingredients": [
+                    {
+                        "name": "Lemongrass",
+                        "category": "Spices",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Bring chicken broth to a boil.",
+                "usedIngredients": [
+                    {
+                        "name": "Chicken Broth",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Add lemongrass and other herbs.",
+                "usedIngredients": [
+                    {
+                        "name": "Lemongrass",
+                        "quantity": 50,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Add shrimp and cook until done.",
+                "usedIngredients": [
+                    {
+                        "name": "Shrimp",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve hot with lime and cilantro.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": true
+    },
+    {
+        "id": "27",
+        "name": "Wiener Schnitzel",
+        "imageUrl": "assets/images/Wiener Schnitzel.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Dairy"
+        ],
+        "components": [
+            {
+                "name": "Meat",
+                "percentage": 70,
+                "ingredients": [
+                    {
+                        "name": "Veal",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Breading",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Breadcrumbs",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Pound the veal cutlets to flatten.",
+                "usedIngredients": [
+                    {
+                        "name": "Veal",
+                        "quantity": 300,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Dip in flour, then egg, and finally breadcrumbs.",
+                "usedIngredients": [
+                    {
+                        "name": "Breadcrumbs",
+                        "quantity": 100,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Fry in hot oil until golden brown.",
+                "usedIngredients": []
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve with lemon wedges.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "28",
+        "name": "Poutine",
+        "imageUrl": "assets/images/Poutine.png",
+        "isVegan": false,
+        "allergens": [
+            "Dairy",
+            "Gluten"
+        ],
+        "components": [
+            {
+                "name": "Fries",
+                "percentage": 50,
+                "ingredients": [
+                    {
+                        "name": "Frozen French Fries",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Sweet Potato Fries",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Baked Potato Wedges",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Homemade French Fries",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Zucchini Fries",
+                                "category": "Vegetables",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Gravy",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Beef Gravy",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Cheese Curds",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Fresh Cheese Curds",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Fry the frozen French fries until golden and crispy.",
+                "usedIngredients": [
+                    {
+                        "name": "Frozen French Fries",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Heat the beef gravy until hot.",
+                "usedIngredients": [
+                    {
+                        "name": "Beef Gravy",
+                        "quantity": 250,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Layer fries on a plate, pour gravy over them, and sprinkle cheese curds.",
+                "usedIngredients": [
+                    {
+                        "name": "Fresh Cheese Curds",
+                        "quantity": 150,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Serve immediately and enjoy.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "29",
+        "name": "Moussaka",
+        "imageUrl": "assets/images/Moussaka.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Dairy"
+        ],
+        "components": [
+            {
+                "name": "Eggplant",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Fresh Eggplant",
+                        "category": "Vegetables",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Ground Meat",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Ground Lamb",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Bechamel Sauces",
+                "percentage": 30,
+                "ingredients": [
+                    {
+                        "name": "Milk Bechamel Sauces",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Slice the eggplant and sprinkle with salt. Let it sit to remove bitterness.",
+                "usedIngredients": [
+                    {
+                        "name": "Fresh Eggplant",
+                        "quantity": 400,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Cook the ground lamb with spices until browned.",
+                "usedIngredients": [
+                    {
+                        "name": "Ground Lamb",
+                        "quantity": 500,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Layer eggplant, meat mixture, and pour bechamel sauce on top.",
+                "usedIngredients": [
+                    {
+                        "name": "Milk Bechamel Sauces",
+                        "quantity": 250,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Bake until golden brown and set.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    },
+    {
+        "id": "30",
+        "name": "Tiramisu",
+        "imageUrl": "assets/images/Tiramisu.png",
+        "isVegan": false,
+        "allergens": [
+            "Gluten",
+            "Dairy",
+            "Eggs"
+        ],
+        "components": [
+            {
+                "name": "Ladyfingers",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Savoiardi (Ladyfingers)",
+                        "category": "Grains",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Mascarpone Cheese",
+                "percentage": 40,
+                "ingredients": [
+                    {
+                        "name": "Mascarpone",
+                        "category": "Proteins",
+                        "percentage": 100,
+                        "isSubstitutable": false
+                    }
+                ]
+            },
+            {
+                "name": "Coffee Mixture",
+                "percentage": 20,
+                "ingredients": [
+                    {
+                        "name": "Espresso",
+                        "category": "Sauces",
+                        "percentage": 100,
+                        "isSubstitutable": true,
+                        "substitutes": [
+                            {
+                                "name": "Strong Brewed Coffee",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Instant Coffee",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "French Press Coffee",
+                                "category": "Sauces",
+                                "percentage": 100
+                            },
+                            {
+                                "name": "Café Cubano",
+                                "category": "Sauces",
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Brew a strong espresso and let it cool.",
+                "usedIngredients": [
+                    {
+                        "name": "Espresso",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "description": "Mix mascarpone with sugar and eggs until smooth.",
+                "usedIngredients": [
+                    {
+                        "name": "Mascarpone",
+                        "quantity": 250,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "description": "Dip ladyfingers in coffee and layer with mascarpone mixture.",
+                "usedIngredients": [
+                    {
+                        "name": "Savoiardi (Ladyfingers)",
+                        "quantity": 200,
+                        "substitute": null
+                    }
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "description": "Chill in the refrigerator for a few hours before serving.",
+                "usedIngredients": []
+            }
+        ],
+        "isFavorite": false,
+        "isSpicy": false
+    }
+]
