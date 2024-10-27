@@ -21,7 +21,7 @@ class DessertGraphScreen extends StatefulWidget {
 }
 
 class _DessertGraphScreenState extends State<DessertGraphScreen> {
-  double _scale = 1.0;
+  double _scale = 0.6;
   Offset _offset = Offset.zero;
   final double _zoomStep = 0.1;
 
@@ -48,7 +48,7 @@ class _DessertGraphScreenState extends State<DessertGraphScreen> {
 
   void _resetPosition() {
     setState(() {
-      _scale = 1.0;
+      _scale = 0.6;
       _offset = Offset.zero;
     });
   }

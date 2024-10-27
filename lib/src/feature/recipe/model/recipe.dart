@@ -34,6 +34,117 @@ class Dessert extends Node {
     required this.isSpicy,
   });
 
+  // Функция для поиска процента компонента по названию
+  int? findComponentPercentageByName(String componentName) {
+    for (var component in components) {
+      int? percentage = _findComponentPercentageInComponent(component, componentName);
+      if (percentage != null) {
+        return percentage;
+      }
+    }
+    return null; // Если компонент не найден
+  }
+
+  // Рекурсивный метод для поиска процента компонента в компоненте
+  int? _findComponentPercentageInComponent(Component component, String componentName) {
+    if (component.name == componentName) {
+      return _calculateComponentPercentage(component); // Высчитываем процент компонента
+    }
+    // Рекурсивно проверяем подкомпоненты
+    if (component.subComponents != null) {
+      for (var subComponent in component.subComponents!) {
+        int? percentage = _findComponentPercentageInComponent(subComponent, componentName);
+        if (percentage != null) {
+          return percentage;
+        }
+      }
+    }
+    return null; // Если компонент не найден в данном компоненте
+  }
+
+  // Функция для вычисления процента компонента
+  int _calculateComponentPercentage(Component component) {
+    if (component.ingredients != null) {
+      int totalPercentage = 0;
+      for (var ingredient in component.ingredients!) {
+        totalPercentage += ingredient.percentage; // Суммируем проценты ингредиентов
+      }
+      return totalPercentage ~/ component.ingredients!.length; // Возвращаем средний процент
+    }
+    if (component.subComponents != null) {
+      int totalPercentage = 0;
+      for (var subComponent in component.subComponents!) {
+        totalPercentage += _calculateComponentPercentage(subComponent); // Суммируем проценты подкомпонентов
+      }
+      return totalPercentage ~/ component.subComponents!.length; // Возвращаем средний процент
+    }
+    return 0; // Если нет ингредиентов или подкомпонентов
+  }
+
+  // Функция для поиска процента ингредиента по названию
+  int? findIngredientPercentageByName(String ingredientName) {
+    for (var component in components) {
+      int? percentage = _findIngredientPercentageInComponent(component, ingredientName);
+      if (percentage != null) {
+        return percentage;
+      }
+    }
+    return null; // Если ингредиент не найден
+  }
+
+  // Рекурсивный метод для поиска процента ингредиента в компоненте
+  int? _findIngredientPercentageInComponent(Component component, String ingredientName) {
+    if (component.ingredients != null) {
+      for (var ingredient in component.ingredients!) {
+        if (ingredient.name == ingredientName) {
+          return ingredient.percentage; // Возвращаем процент ингредиента
+        }
+      }
+    }
+    // Рекурсивно проверяем подкомпоненты
+    if (component.subComponents != null) {
+      for (var subComponent in component.subComponents!) {
+        int? percentage = _findIngredientPercentageInComponent(subComponent, ingredientName);
+        if (percentage != null) {
+          return percentage;
+        }
+      }
+    }
+    return null; // Если ингредиент не найден в данном компоненте
+  }
+
+
+  String? findIngredientTypeByName(String ingredientName) {
+    for (var component in components) {
+      String? type = _findIngredientTypeInComponent(component, ingredientName);
+      if (type != null) {
+        return type;
+      }
+    }
+    return null; // Если ингредиент не найден
+  }
+
+  // Рекурсивный метод для поиска ингредиента в компоненте
+  String? _findIngredientTypeInComponent(Component component, String ingredientName) {
+    if (component.ingredients != null) {
+      for (var ingredient in component.ingredients!) {
+        if (ingredient.name == ingredientName) {
+          return ingredient.category; // Возвращаем категорию ингредиента
+        }
+      }
+    }
+    // Рекурсивно проверяем подкомпоненты
+    if (component.subComponents != null) {
+      for (var subComponent in component.subComponents!) {
+        String? type = _findIngredientTypeInComponent(subComponent, ingredientName);
+        if (type != null) {
+          return type;
+        }
+      }
+    }
+    return null; // Если ингредиент не найден в данном компоненте
+  }
+
   factory Dessert.fromJson(String source) =>
       Dessert.fromMap(json.decode(source) as Map<String, dynamic>);
 
