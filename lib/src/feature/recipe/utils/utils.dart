@@ -24,6 +24,8 @@ class _DessertGraphScreenState extends State<DessertGraphScreen> {
   double _scale = 0.6;
   Offset _offset = Offset.zero;
   final double _zoomStep = 0.1;
+  Offset _startFocalPoint = Offset.zero;
+  double _startScale = 0.6;
 
   final Map<String, Offset> _componentPositions = {};
   final Map<String, Offset> _ingredientPositions = {};
@@ -77,42 +79,65 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
     );
   }
 
+  void _onScaleStart(ScaleStartDetails details) {
+    _startFocalPoint = details.focalPoint;
+    _startScale = _scale;
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final double screenWidth = constraints.maxWidth;
-        final double screenHeight = constraints.maxHeight;
+        final double screenWidth = MediaQuery.of(context).size.width;
+        final double screenHeight = MediaQuery.of(context).size.height;
         final double baseSize = screenWidth * 0.5;
         final GlobalKey shareKey = GlobalKey();
+        print(screenWidth * 30);
 
         return Stack(
           clipBehavior: Clip.none,
           children: [
-            Transform(
-              transform: Matrix4.identity()
-                ..translate(_offset.dx, _offset.dy)
-                ..scale(_scale),
-              alignment: FractionalOffset.center,
-              child: SizedBox(
-                width: screenWidth * 30,
-                height: screenHeight * 30,
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    ..._buildComponents(screenWidth, screenHeight, baseSize),
-                    Center(
-                      child: NodeWidget(
-                        size: baseSize,
-                        label: widget.dessert.name,
-                        fontSize: baseSize * 0.2,
-                        category: "Dish",
-                        data: widget.dessert,
-                        onTap: (String d) {},
-                        dessert: widget.dessert,
+            GestureDetector(
+              onScaleStart: _onScaleStart,
+              onScaleUpdate: (details) {
+                setState(() {
+                  _scale = _startScale * details.scale;
+                  final Offset delta = details.focalPoint - _startFocalPoint;
+                  _offset += delta;
+                  _startFocalPoint = details.focalPoint;
+                });
+              },
+              child: Transform(
+                transform: Matrix4.identity()..scale(_scale),
+                alignment: FractionalOffset.center,
+                child: Center(
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        width: screenWidth * 30,
+                        height: screenHeight * 30,
+                        color: Colors.transparent,
                       ),
-                    ),
-                  ],
+                      ..._buildComponents(screenWidth, screenHeight, baseSize),
+                      Center(
+                        child: Transform(
+                          transform: Matrix4.identity()
+                            ..translate(_offset.dx, _offset.dy),
+                          alignment: FractionalOffset.center,
+                          child: NodeWidget(
+                            size: baseSize,
+                            label: widget.dessert.name,
+                            fontSize: baseSize * 0.2,
+                            category: "Dish",
+                            data: widget.dessert,
+                            onTap: (String d) {},
+                            dessert: widget.dessert,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -298,10 +323,14 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
     result.insert(
       0, // Вставляем в начало списка, чтобы линии были под компонентом
 
-      CustomPaint(
-        painter: LinePainter(
-          start: parentPosition,
-          end: position,
+      Transform(
+        transform: Matrix4.identity()..translate(_offset.dx, _offset.dy),
+        alignment: FractionalOffset.center,
+        child: CustomPaint(
+          painter: LinePainter(
+            start: parentPosition,
+            end: position,
+          ),
         ),
       ),
     );
@@ -311,8 +340,9 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
       Positioned(
         left: position.dx - componentSize / 2,
         top: position.dy - componentSize / 2,
-        child: GestureDetector(
-          onTap: () {},
+        child: Transform(
+          transform: Matrix4.identity()..translate(_offset.dx, _offset.dy),
+          alignment: FractionalOffset.center,
           child: NodeWidget(
             size: componentSize,
             label: component.name,
@@ -355,10 +385,13 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
         }
         result.insert(
           0, // Линия под субкомпонентом
-          CustomPaint(
-            painter: LinePainter(
-              start: position,
-              end: subPosition,
+          Transform(
+            transform: Matrix4.identity()..translate(_offset.dx, _offset.dy),
+            child: CustomPaint(
+              painter: LinePainter(
+                start: position,
+                end: subPosition,
+              ),
             ),
           ),
         );
@@ -367,8 +400,10 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
             Positioned(
               left: subPosition.dx - subComponentSize / 2,
               top: subPosition.dy - subComponentSize / 2,
-              child: GestureDetector(
-                onTap: () {},
+              child: Transform(
+                transform: Matrix4.identity()
+                  ..translate(_offset.dx, _offset.dy),
+                alignment: FractionalOffset.center,
                 child: NodeWidget(
                   size: subComponentSize,
                   label: subComponent.name,
@@ -555,10 +590,14 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
         }
 
         ingredients.add(
-          CustomPaint(
-            painter: LinePainter(
-              start: parentPosition,
-              end: position,
+          Transform(
+            transform: Matrix4.identity()..translate(_offset.dx, _offset.dy),
+            alignment: FractionalOffset.center,
+            child: CustomPaint(
+              painter: LinePainter(
+                start: parentPosition,
+                end: position,
+              ),
             ),
           ),
         );
@@ -567,8 +606,9 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
           Positioned(
             left: position.dx - ingredientSize / 2,
             top: position.dy - ingredientSize / 2,
-            child: GestureDetector(
-              onTap: () {},
+            child: Transform(
+              transform: Matrix4.identity()..translate(_offset.dx, _offset.dy),
+              alignment: FractionalOffset.center,
               child: NodeWidget(
                 size: ingredientSize,
                 label: ingredient.name,

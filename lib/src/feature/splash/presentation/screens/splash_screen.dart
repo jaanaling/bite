@@ -17,14 +17,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-
-        late AnimationController _controller;
+  late AnimationController _controller;
   int _dotCount = 0;
   late Timer _timer;
   @override
   void initState() {
     super.initState();
-     _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
     _timer = Timer.periodic(Duration(milliseconds: 500), (timer) {
       setState(() {
         _dotCount = (_dotCount + 1) % 4; // Меняет количество точек от 0 до 3
@@ -57,10 +57,10 @@ class _SplashScreenState extends State<SplashScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-      'Loading${'.' * _dotCount}', // Добавляет нужное количество точек
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-    ),
-    Gap(14),
+                  'Loading${'.' * _dotCount}', // Добавляет нужное количество точек
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Gap(14),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: const SizedBox(
