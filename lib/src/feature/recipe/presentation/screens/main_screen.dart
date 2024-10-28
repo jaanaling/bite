@@ -181,10 +181,18 @@ class _MainScreenState extends State<MainScreen> {
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(48),
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(48),
+                                      bottomLeft: Radius.circular(48),
+                                    ),
                                     child: GestureDetector(
                                       child: Image.asset(
                                         filteredRecipes[index].imageUrl,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.6,
+                                      
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
@@ -222,11 +230,12 @@ class _MainScreenState extends State<MainScreen> {
                               ],
                             ),
                           ),
+                          Spacer(),
                           Expanded(
                             child: ListView.separated(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
-                              padding: EdgeInsets.fromLTRB(60, 23, 0, 23),
+                              padding: EdgeInsets.fromLTRB(0, 23, 0, 23),
                               itemCount: filteredRecipes[index]
                                       .allergens
                                       .length +
