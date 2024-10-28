@@ -2,8 +2,11 @@
 import 'dart:convert';
 import 'dart:ui';
 
+import 'package:application/src/core/utils/icon_provider.dart';
+import 'package:application/src/core/utils/log.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 abstract class Node {
   String get name;
@@ -196,6 +199,70 @@ class Dessert extends Node {
 
   @override
   bool get isSubstitutable => false;
+
+  void replaceComponentOrIngredient(String name, Node substitute) {
+    if (substitute is Component) {
+      _replaceComponentInList(components, name, substitute);
+    } else if (substitute is Ingredient) {
+      _replaceIngredientInComponents(components, name, substitute);
+    }
+  }
+
+
+  void _replaceComponentInList(
+      List<Component> components, String componentName, Component substitute) {
+    for (int i = 0; i < components.length; i++) {
+      if (components[i].name == componentName) {
+        substitute.substitutes ??= [];
+        if (components[i].substitutes != null) {
+          final List<Component> substituteComponents =
+              List<Component>.from(components[i].substitutes!);
+          substitute.substitutes = substituteComponents;
+        }
+        // Добавляем заменяемый элемент в список замен
+        substitute.substitutes!.add(components[i]);
+        substitute.substitutes!.remove(substitute);
+        // Заменяем компонент
+        components[i] = substitute;
+        return;
+      }
+      if (components[i].subComponents != null) {
+        _replaceComponentInList(
+            components[i].subComponents!, componentName, substitute);
+      }
+    }
+  }
+
+// Метод для поиска и замены ингредиента в компонентах
+  void _replaceIngredientInComponents(List<Component> components,
+      String ingredientName, Ingredient substitute) {
+    for (final component in components) {
+      if (component.ingredients != null) {
+        for (int i = 0; i < component.ingredients!.length; i++) {
+          if (component.ingredients![i].name == ingredientName) {
+            // Создаём новый список замен, включая заменяемый элемент и заменителей
+            substitute.substitutes ??= [];
+            if (component.ingredients![i].substitutes != null) {
+              final List<Ingredient> substituteIngredients =
+                  List<Ingredient>.from(component.ingredients![i].substitutes!);
+              substitute.substitutes = substituteIngredients;
+            }
+            // Добавляем заменяемый элемент в список замен
+            substitute.substitutes!.add(component.ingredients![i]);
+            substitute.substitutes!.remove(substitute);
+
+            // Заменяем ингредиент
+            component.ingredients![i] = substitute;
+            return;
+          }
+        }
+      }
+      if (component.subComponents != null) {
+        _replaceIngredientInComponents(
+            component.subComponents!, ingredientName, substitute);
+      }
+    }
+  }
 }
 
 class Component extends Node {
@@ -203,7 +270,7 @@ class Component extends Node {
   final List<Ingredient>? ingredients;
   final int percentage;
   final List<Component>? subComponents;
-  final List<Component>? substitutes;
+  List<Component>? substitutes;
 
   Component({
     required this.name,
@@ -291,7 +358,7 @@ class Ingredient extends Node {
   final String category;
   final int percentage;
   final bool isSubstitutable;
-  final List<Ingredient>? substitutes;
+  List<Ingredient>? substitutes;
 
   Ingredient({
     required this.name,
@@ -451,102 +518,200 @@ class NodeWidget extends StatelessWidget {
   final double fontSize;
   final bool isSubstitutable;
   final String category;
-  final Function()? onTap;
+  final Node data;
+  final Dessert dessert;
+  final Function(String) onTap;
 
   const NodeWidget({
     required this.size,
     required this.label,
     required this.fontSize,
-    this.category = "",
+    this.category = '',
     this.isSubstitutable = false,
-    this.onTap,
+    required this.data,
+    required this.onTap,
+    required this.dessert,
   });
 
   @override
   Widget build(BuildContext context) {
-    final color = category == "Proteins"
+    final color = category == 'Proteins'
         ? const Color(0xFFE76E24)
-        : category == "Vegetables"
+        : category == 'Vegetables'
             ? const Color(0xFF37CD19)
-            : category == "Spices"
+            : category == 'Spices'
                 ? const Color(0xFFCD1997)
-                : category == "Sauces"
+                : category == 'Sauces'
                     ? const Color(0xFFE72424)
-                    : category == "Grains"
+                    : category == 'Grains'
                         ? const Color(0xFFE7A224)
-                        : category == "Carbohydrates"
+                        : category == 'Carbohydrates'
                             ? const Color.fromARGB(255, 226, 64, 15)
                             : const Color(0xFF6A00C7);
     return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: category == "Dish" ? size * 1.2 : size,
-        height: size * 0.8,
-        decoration: BoxDecoration(
-          shape: category == "Dish" ? BoxShape.rectangle : BoxShape.circle,
-          borderRadius: category == "Dish"
-              ? const BorderRadius.all(Radius.circular(48))
-              : null,
-          boxShadow: category == "Dish"
-              ? [
-                  const BoxShadow(
-                    color: Color.fromRGBO(56, 4, 118, 0.37),
-                    offset: Offset(0, 19),
-                    blurRadius: 27.4,
-                    spreadRadius: -8,
+      onTap: () {
+        logger.d("TAP");
+        if (data is Component || data is Ingredient) {
+          showCupertinoDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CupertinoAlertDialog(
+                title: Text(data.name),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Name: ${data.name}'),
+                    Text('Percentage: ${data.percentage}%'),
+                    Text(data is Ingredient
+                        ? 'Category: ${(data as Ingredient).category}'
+                        : ''),
+                    Text(
+                      ((data is Ingredient &&
+                                  (data as Ingredient).substitutes != null &&
+                                  (data as Ingredient)
+                                      .substitutes!
+                                      .isNotEmpty) ||
+                              (data is Component &&
+                                  (data as Component).substitutes != null &&
+                                  (data as Component).substitutes!.isNotEmpty))
+                          ? "Substitutes:"
+                          : "",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    if (data is Component &&
+                        ((data as Component).substitutes != null &&
+                            (data as Component).substitutes!.isNotEmpty))
+                      for (final substitute in (data as Component).substitutes!)
+                        CupertinoButton(
+                          padding: EdgeInsets.zero,
+                          child: Text(
+                            substitute.name,
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          onPressed: () {
+                            dessert.replaceComponentOrIngredient(
+                                data.name, substitute);
+                            onTap(substitute.name);
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                    if (data is Ingredient &&
+                        (data as Ingredient).substitutes != null &&
+                        (data as Ingredient).substitutes!.isNotEmpty)
+                      for (final substitute
+                          in (data as Ingredient).substitutes!)
+                        CupertinoButton(
+                          padding: EdgeInsets.zero,
+                          child: Text(
+                            substitute.name,
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          onPressed: () {
+                            dessert.replaceComponentOrIngredient(
+                                data.name, substitute);
+                            onTap(substitute.name);
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                  ],
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Close'),
                   ),
-                ]
-              : null,
-          gradient: category == "Dish"
-              ? LinearGradient(
-                  colors: [
-                    Color.lerp(
-                      color,
-                      Colors.white,
-                      0.2,
-                    )!,
-                    color,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                )
-              : RadialGradient(
-                  colors: [
-                    Color.lerp(
-                      color,
-                      Colors.white,
-                      0.4,
-                    )!,
-                    color,
-                  ],
-                  radius: 0.8148,
-                  center: const Alignment(0.2975 * 2 - 1, 0.2107 * 2 - 1),
-                  stops: [0.0, 1.0],
-                ),
-        ),
-        alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: Text(
-            label,
-            style: TextStyle(
-              color: Color(0xFFFFFFFF),
-              shadows: [
-                Shadow(
-                  offset: Offset(0, 4),
-                  blurRadius: 3.1,
-                  color: Color.fromRGBO(0, 0, 0, 0.51),
-                ),
-              ],
-              fontFamily: 'Montserrat',
-              fontSize: fontSize,
-              fontWeight: FontWeight.w600,
-              height: 1.0,
-              textBaseline: TextBaseline.alphabetic,
+                ],
+              );
+            },
+          );
+        }
+      },
+      child: Stack(
+        children: [
+          Container(
+            width: category == 'Dish' ? size * 1.2 : size,
+            height: category == 'Dish' ? size * 0.8 : size,
+            decoration: BoxDecoration(
+              shape: category == 'Dish' ? BoxShape.rectangle : BoxShape.circle,
+              borderRadius: category == 'Dish'
+                  ? const BorderRadius.all(Radius.circular(48))
+                  : null,
+              boxShadow: category == 'Dish'
+                  ? [
+                      const BoxShadow(
+                        color: Color.fromRGBO(56, 4, 118, 0.37),
+                        offset: Offset(0, 19),
+                        blurRadius: 27.4,
+                        spreadRadius: -8,
+                      ),
+                    ]
+                  : null,
+              gradient: category == 'Dish'
+                  ? LinearGradient(
+                      colors: [
+                        Color.lerp(
+                          color,
+                          Colors.white,
+                          0.2,
+                        )!,
+                        color,
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    )
+                  : RadialGradient(
+                      colors: [
+                        Color.lerp(
+                          color,
+                          Colors.white,
+                          0.4,
+                        )!,
+                        color,
+                      ],
+                      radius: 0.8148,
+                      center: const Alignment(0.2975 * 2 - 1, 0.2107 * 2 - 1),
+                      stops: [0.0, 1.0],
+                    ),
             ),
-            textAlign: TextAlign.center,
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  shadows: [
+                    Shadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 3.1,
+                      color: Color.fromRGBO(0, 0, 0, 0.51),
+                    ),
+                  ],
+                  fontFamily: 'Montserrat',
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w600,
+                  height: 1.0,
+                  textBaseline: TextBaseline.alphabetic,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
-        ),
+          if ((data is Ingredient &&
+                  (data as Ingredient).substitutes != null &&
+                  (data as Ingredient).substitutes!.isNotEmpty) ||
+              (data is Component &&
+                  (data as Component).substitutes != null &&
+                  (data as Component).substitutes!.isNotEmpty))
+            SvgPicture.asset(
+              IconProvider.c.buildImageUrl(),
+              width: size,
+              height: size,
+            ),
+        ],
       ),
     );
   }

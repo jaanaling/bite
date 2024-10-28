@@ -9,6 +9,7 @@ enum IconProvider {
   dairy(imageName: 'soy.svg'),
   hot(imageName: 'hot.svg'),
   veg(imageName: 'veg.svg'),
+  c(imageName: 'choose.svg'),
 
   unknown(imageName: '');
 

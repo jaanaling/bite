@@ -59,8 +59,7 @@ class _MainScreenState extends State<MainScreen> {
                       },
                       child: DecoratedBox(
                         decoration: BoxDecoration(
-                          color:
-                              isHot ? Color(0xFFE00F0F) : Color(0xFF9F9F9F),
+                          color: isHot ? Color(0xFFE00F0F) : Color(0xFF9F9F9F),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -80,8 +79,7 @@ class _MainScreenState extends State<MainScreen> {
                       },
                       child: DecoratedBox(
                         decoration: BoxDecoration(
-                          color:
-                              isVeg ? Color(0xFF3CC93C) : Color(0xFF9F9F9F),
+                          color: isVeg ? Color(0xFF3CC93C) : Color(0xFF9F9F9F),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -126,11 +124,12 @@ class _MainScreenState extends State<MainScreen> {
             builder: (context, state) {
               if (state is RecipeLoaded) {
                 final List<Dessert> filteredRecipes = state.recipes
-                    .where((r) => r.isVegan == isVeg)
-                    .where((r) => r.isSpicy == isHot)
-                    .where((r) => r.isFavorite == isFavourite)
+                    .where((r) => isVeg ? r.isVegan == isVeg : true)
+                    .where((r) => isHot ? r.isSpicy == isHot : true)
+                    .where(
+                        (r) => isFavourite ? r.isFavorite == isFavourite : true)
                     .toList();
-    
+
                 return ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -140,7 +139,6 @@ class _MainScreenState extends State<MainScreen> {
                   itemBuilder: (context, index) => GestureDetector(
                     onTap: () {
                       context.push(
-                     
                         '${RouteValue.home.path}/${RouteValue.recipe.path}',
                         extra: filteredRecipes[index],
                       );
@@ -228,7 +226,7 @@ class _MainScreenState extends State<MainScreen> {
                             child: ListView.separated(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
-                              padding: EdgeInsets.all(28),
+                              padding: EdgeInsets.fromLTRB(60, 23, 0, 23),
                               itemCount: filteredRecipes[index]
                                       .allergens
                                       .length +
@@ -237,24 +235,23 @@ class _MainScreenState extends State<MainScreen> {
                                   (BuildContext context, int index) => Gap(8),
                               itemBuilder: (BuildContext context, int id) =>
                                   Align(
-                                alignment: Alignment.centerRight,
+                                alignment: Alignment.center,
                                 child: filteredRecipes[index].isFavorite &&
                                         id ==
                                             filteredRecipes[index]
-                                                    .allergens
-                                                    .length +
-                                                1
+                                                .allergens
+                                                .length
                                     ? Icon(
                                         CupertinoIcons.heart_fill,
                                         color: Colors.white,
-                                        size: 40,
+                                        size: 30,
                                       )
                                     : SvgPicture.asset(
-                                        width: 40,
-                                        height: 40,
+                                        alignment: Alignment.center,
+                                        width: 30,
+                                        height: 30,
                                         getAllergenIcon(
-                                          filteredRecipes[index]
-                                              .allergens[id],
+                                          filteredRecipes[index].allergens[id],
                                         ),
                                       ),
                               ),

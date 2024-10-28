@@ -77,7 +77,6 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -108,6 +107,9 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
                         label: widget.dessert.name,
                         fontSize: baseSize * 0.2,
                         category: "Dish",
+                        data: widget.dessert,
+                        onTap: (String d) {},
+                        dessert: widget.dessert,
                       ),
                     ),
                   ],
@@ -164,7 +166,10 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
                   CircleButton(
                     color: Color(0xFF6A00C7),
                     onTap: () {
-                        context.read<RecipeBloc>().add(ToggleFavorite(widget.dessert.name));
+                      context
+                          .read<RecipeBloc>()
+                          .add(ToggleFavorite(widget.dessert.name));
+                      setState(() {});
                     },
                     icon: widget.dessert.isFavorite
                         ? CupertinoIcons.heart_fill
@@ -292,12 +297,11 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
     // Линия между родителем и компонентом должна быть под компонентом
     result.insert(
       0, // Вставляем в начало списка, чтобы линии были под компонентом
-      Positioned.fill(
-        child: CustomPaint(
-          painter: LinePainter(
-            start: parentPosition,
-            end: position,
-          ),
+
+      CustomPaint(
+        painter: LinePainter(
+          start: parentPosition,
+          end: position,
         ),
       ),
     );
@@ -315,6 +319,17 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
             fontSize: componentSize * 0.2,
             isSubstitutable: component.substitutes?.isNotEmpty ?? false,
             category: component.name,
+            data: component,
+            onTap: (String name) {
+              setState(() {
+                if (_componentPositions.containsKey(component.name)) {
+                  _componentPositions[name] =
+                      _componentPositions[component.name]!;
+                  _componentPositions.remove(component.name);
+                }
+              });
+            },
+            dessert: widget.dessert,
           ),
         ),
       ),
@@ -340,12 +355,10 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
         }
         result.insert(
           0, // Линия под субкомпонентом
-          Positioned.fill(
-            child: CustomPaint(
-              painter: LinePainter(
-                start: position,
-                end: subPosition,
-              ),
+          CustomPaint(
+            painter: LinePainter(
+              start: position,
+              end: subPosition,
             ),
           ),
         );
@@ -362,6 +375,18 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
                   fontSize: subComponentSize * 0.2,
                   isSubstitutable:
                       subComponent.substitutes?.isNotEmpty ?? false,
+                  data: subComponent,
+                  category: subComponent.name,
+                  onTap: (String name) {
+                    setState(() {
+                      if (_componentPositions.containsKey(subComponent.name)) {
+                        _componentPositions[name] =
+                            _componentPositions[subComponent.name]!;
+                        _componentPositions.remove(subComponent.name);
+                      }
+                    });
+                  },
+                  dessert: widget.dessert,
                 ),
               ),
             ),
@@ -530,12 +555,10 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
         }
 
         ingredients.add(
-          Positioned.fill(
-            child: CustomPaint(
-              painter: LinePainter(
-                start: parentPosition,
-                end: position,
-              ),
+          CustomPaint(
+            painter: LinePainter(
+              start: parentPosition,
+              end: position,
             ),
           ),
         );
@@ -552,6 +575,17 @@ Hey! 🍜 I just found this amazing $name recipe – it’s super easy to make! 
                 fontSize: ingredientSize * 0.2,
                 isSubstitutable: ingredient.isSubstitutable,
                 category: ingredient.category,
+                data: ingredient,
+                onTap: (String name) {
+                  setState(() {
+                    if (_ingredientPositions.containsKey(ingredient.name)) {
+                      _ingredientPositions[name] =
+                          _ingredientPositions[ingredient.name]!;
+                      _ingredientPositions.remove(ingredient.name);
+                    }
+                  });
+                },
+                dessert: widget.dessert,
               ),
             ),
           ),

@@ -40,7 +40,6 @@ class _ListScreenState extends State<ListScreen> {
                 },
                 icon: CupertinoIcons.chevron_back,
               ),
-            
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -94,25 +93,25 @@ class _ListScreenState extends State<ListScreen> {
                 if (step.usedIngredients.length > 1)
                   Positioned(
                     top: height * 0.096,
-                    right: width * 0.072,
+                    right: width * 0.086,
                     child: getNode(step, 1),
                   ),
                 if (step.usedIngredients.length > 2)
                   Positioned(
                     top: height * 0.096,
-                    left: width * 0.05,
+                    left: width * 0.08,
                     child: getNode(step, 2),
                   ),
                 if (step.usedIngredients.length > 3)
                   Positioned(
                     bottom: height * 0.052,
-                    right: width * 0.086,
+                    right: width * 0.15,
                     child: getNode(step, 3),
                   ),
                 if (step.usedIngredients.length > 4)
                   Positioned(
                     bottom: height * 0.063,
-                    left: width * 0.13,
+                    left: width * 0.15,
                     child: getNode(step, 4),
                   ),
               ],
@@ -227,20 +226,36 @@ class _ListScreenState extends State<ListScreen> {
   }
 
   double calculatePercentage(int percentage) {
-    return (percentage) / 100 * 104;
+    double size  = (percentage/ 100) * 104;
+    return size<60?60:size;
   }
 
   Widget getNode(recipe.Step step, int ingredientIndex) {
-    final name = step.usedIngredients.first.name;
-    String category = widget.dessert.findIngredientTypeByName(name) ?? '';
+    final name = step.usedIngredients[ingredientIndex].name;
+    String category = widget.dessert.findIngredientTypeByName(name) ?? 'fds';
     final percentage = category.isNotEmpty
         ? widget.dessert.findIngredientPercentageByName(name) ?? 0
-        : widget.dessert.findComponentPercentageByName(name) ?? 0;
+        : widget.dessert.findComponentPercentageByName(name) ??0;
     return recipe.NodeWidget(
       size: calculatePercentage(percentage),
       label: name,
-      fontSize: 22 * (percentage / 100),
+      fontSize: 22 * (calculatePercentage(percentage) / 100),
       category: category,
+      isSubstitutable: widget.dessert.isSubstitutable,
+      onTap: (String d) {},
+      dessert: widget.dessert,
+      data: category.isNotEmpty
+          ? recipe.Ingredient(
+              name: name,
+              category: category,
+              percentage: percentage,
+              isSubstitutable: true,
+            )
+          : recipe.Component(
+              name: name,
+              percentage: percentage,
+              ingredients: null,
+            ),
     );
   }
 }
