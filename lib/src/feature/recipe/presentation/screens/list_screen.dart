@@ -55,14 +55,14 @@ class _ListScreenState extends State<ListScreen> {
           ),
           Gap(16),
           SizedBox(
-            width: width * 0.91,
-            height: width * 0.91,
+            width: 328,
+            height: 328,
             child: Stack(
               alignment: Alignment.center,
               children: [
                 Container(
-                  width: width * 0.91,
-                  height: width * 0.91,
+                  width: 328,
+                  height: 328,
                   decoration: const ShapeDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -89,29 +89,29 @@ class _ListScreenState extends State<ListScreen> {
                   ),
                 ),
                 if (step.usedIngredients.isNotEmpty)
-                  Positioned(top: height * 0.005, child: getNode(step, 0)),
+                  Positioned(top: 4, child: getNode(step, 0)),
                 if (step.usedIngredients.length > 1)
                   Positioned(
-                    top: height * 0.096,
-                    right: width * 0.086,
+                    top: 77,
+                    right: 26,
                     child: getNode(step, 1),
                   ),
                 if (step.usedIngredients.length > 2)
                   Positioned(
-                    top: height * 0.096,
-                    left: width * 0.08,
+                    top: 77,
+                    left: 26,
                     child: getNode(step, 2),
                   ),
                 if (step.usedIngredients.length > 3)
                   Positioned(
-                    bottom: height * 0.052,
-                    right: width * 0.15,
+                    bottom: 42,
+                    right: 35,
                     child: getNode(step, 3),
                   ),
                 if (step.usedIngredients.length > 4)
                   Positioned(
-                    bottom: height * 0.063,
-                    left: width * 0.15,
+                    bottom: 42,
+                    left: 35,
                     child: getNode(step, 4),
                   ),
               ],

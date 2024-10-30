@@ -253,12 +253,16 @@ class _MainScreenState extends State<MainScreen> {
                                     ? Icon(
                                         CupertinoIcons.heart_fill,
                                         color: Colors.white,
-                                        size: 30,
+                                        size: MediaQuery.of(context).size.width *
+                                                 0.06,
                                       )
                                     : SvgPicture.asset(
                                         alignment: Alignment.center,
-                                        width: 30,
-                                        height: 30,
+                                        width: MediaQuery.of(context).size.width *
+                                                 0.06,
+                                        height: MediaQuery.of(context).size.width *
+                                                 0.06,
+                                    
                                         getAllergenIcon(
                                           filteredRecipes[index].allergens[id],
                                         ),
